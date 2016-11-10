@@ -1,0 +1,22 @@
+
+    <a ng-href="#/movie/new" class="btn-primary btn-lg nodecoration">Add New Movie</a>
+
+    <table class="table movietable" style="margin-top: 20px;">
+        <tr>
+            <td><h3>All Movies</h3></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr ng-repeat="movie in movies">
+            <td>{{movie.title}}</td>
+            <td>
+                <a class="btn btn-primary" ng-href="#/movie/{{movie._id}}/view">View</a>
+                <a class="btn btn-danger"  ng-click="deleteMovie(movie)" loading="Deleting">
+
+                   Delete <!--<span ng-show="currentMovie==movie">Deleting..</span>-->
+                </a>
+                <!--<span ng-show="currentMovie==movie">Deleting..</span>-->
+            </td>
+            <td>{{ movie._id}}</td>
+        </tr>
+    </table>
